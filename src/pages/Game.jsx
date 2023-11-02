@@ -1,6 +1,7 @@
 import "../styles/Home.css";
 import Board from "../components/Board";
 import { useState } from "react";
+
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
@@ -9,11 +10,15 @@ export default function Game() {
 
   function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    console.log(nextHistory.length - 1)
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
+
   }
 
+
   function jumpTo(nextMove) {
+
     setCurrentMove(nextMove);
   }
 

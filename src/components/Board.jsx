@@ -3,6 +3,7 @@ import Square from "./Squares";
 import calculateWinner from "../scripts/calcularWiner";
 
 function Board({ xIsNext, squares, onPlay }) {
+
   const [squaresButtons, setSquaresButtons] = useState()
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
